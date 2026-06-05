@@ -27,3 +27,48 @@ a {
 }
 
 /* Aggiungi qui le tue regole, mobile-first. */
+
+/* ===== HEADER ===== */
+#site-header {
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f7a4d;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.main-nav a {
+  color: #555555;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.main-nav a:hover {
+  background-color: #ebfaf2;
+  color: #1f7a4d;
+}
