@@ -28,7 +28,7 @@ a {
 
 /* Aggiungi qui le tue regole, mobile-first. */
 
-/* ===== HEADER ===== */
+/* HEADER */
 #site-header {
   background-color: #ffffff;
   padding: 16px;
@@ -71,4 +71,59 @@ a {
 .main-nav a:hover {
   background-color: #ebfaf2;
   color: #1f7a4d;
+}
+
+/* --- HERO --- */
+.hero {
+  background-color: #1f7a4d;
+  padding: 110px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero p {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.btn-progetti {
+  background-color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  color: #1f7a4d;
+  padding: 9px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 16px;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn-progetti:hover {
+  background-color: #ffffff;
+  color: #1f7a4d;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
