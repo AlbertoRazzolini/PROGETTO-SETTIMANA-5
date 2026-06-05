@@ -126,9 +126,11 @@ a {
 /* Sezione hero: sfondo verde, contenuto centrato */
 .hero {
   background-color: #1f7a4d;
-  padding: 150px 24px;
+  padding: 24px;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Colonna centrata con spazio tra gli elementi */
