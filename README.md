@@ -30,13 +30,12 @@ PROGETTO-SETTIMANA-5/
 
 ## Sezioni
 
-| Sezione | Descrizione                                             |
-| ------- | ------------------------------------------------------- |
-| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll   |
-| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp` |
-| Servizi | Tre card responsive (1 col → 2 col → 3 col)             |
-| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, |
-|         | social al centro, copyright a dx                        |
+| Sezione | Descrizione                                                                                                                                   |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll                                                                                         |
+| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp`                                                                                       |
+| Servizi | Tre card responsive (1 col → 2 col → 3 col)                                                                                                   |
+| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, social al centro, copyright a dx — click sul logo riporta in cima con scroll animato |
 
 ## Layout
 
