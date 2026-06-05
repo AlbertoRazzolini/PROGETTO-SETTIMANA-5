@@ -42,6 +42,22 @@ a {
 
 /* --- HEADER --- */
 /* Barra fissa in cima, rimane visibile durante lo scroll */
+/* Quando l'utente scorre oltre 100px JS aggiunge questa classe */
+#site-header.scrolled {
+  background-color: #1a1a1a;
+}
+
+/* Link nav: stesso colore del testo footer */
+#site-header.scrolled .main-nav a {
+  color: #555555;
+}
+
+/* Hover nav: stesso verde hover dei social footer */
+#site-header.scrolled .main-nav a:hover {
+  background-color: #248f59;
+  color: #555555;
+}
+
 #site-header {
   background-color: #fafafa;
   padding: 16px;
@@ -321,6 +337,13 @@ a {
 
 /* --- MEDIA QUERY 768px --- */
 @media (min-width: 768px) {
+  /* Header: logo a sinistra, nav a destra */
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   /* Card in griglia 2+1: due in cima, una centrata sotto */
   .services-inner {
     max-width: 90%;
@@ -335,10 +358,32 @@ a {
   .service-card {
     flex: 1 0 48%; /* cresce, non si restringe, larghezza base 48% */
   }
+
+  /* Footer: logo+tagline a sinistra, social al centro, copyright a destra */
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    max-width: 90%;
+    gap: 40px;
+  }
+
+  /* Logo e tagline in colonna, allineati a sinistra */
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 
 /* --- MEDIA QUERY 992px --- */
 @media (min-width: 992px) {
+  /* Header: spazio distribuito attorno agli elementi */
+  .header-inner {
+    justify-content: space-around;
+  }
+
   /* Tre card affiancate in fila */
   .services-inner {
     max-width: 90%;
