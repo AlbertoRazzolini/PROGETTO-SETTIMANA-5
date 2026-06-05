@@ -1,12 +1,12 @@
 // Bloom — Week Project Settimana V
-//
-// Aggiungi qui il codice JavaScript se serve (es. modale, scroll handler).
-// Per la Versione Base spesso non serve niente: tutto si fa in CSS.
-//
-// Aggiunge la classe "scrolled" all'header dopo 100px di scroll
+
+// Recupera l'header una sola volta, fuori dal listener, per non cercarlo ad ogni scroll
 const header = document.getElementById("site-header");
 
+// Ascolta lo scroll della pagina
 window.addEventListener("scroll", () => {
+  // Oltre 100px aggiunge "scrolled": il CSS scurisce l'header
+  // Sotto i 100px la rimuove, tornando al colore originale
   if (window.scrollY > 100) {
     header.classList.add("scrolled");
   } else {
