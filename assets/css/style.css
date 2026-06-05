@@ -183,7 +183,7 @@ a {
 /* Sezione servizi: sfondo grigio chiaro, contenuto centrato */
 .services {
   background-color: #fafafa;
-  padding: 60px 24px;
+  padding: 60px 10px;
   display: flex;
   justify-content: center;
 }
@@ -317,4 +317,38 @@ a {
   color: #838383;
   font-size: 0.8rem;
   margin: 0;
+}
+
+/* --- MEDIA QUERY 768px --- */
+@media (min-width: 768px) {
+  /* Card in griglia 2+1: due in cima, una centrata sotto */
+  .services-inner {
+    max-width: 90%;
+  }
+
+  .services-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-card {
+    flex: 1 0 48%; /* cresce, non si restringe, larghezza base 48% */
+  }
+}
+
+/* --- MEDIA QUERY 992px --- */
+@media (min-width: 992px) {
+  /* Tre card affiancate in fila */
+  .services-inner {
+    max-width: 90%;
+  }
+
+  .services-grid {
+    flex-wrap: nowrap;
+  }
+
+  .service-card {
+    flex: 1 1 0; /* cresce, si restringe, basis 0: le tre card si dividono lo spazio equamente */
+  }
 }
