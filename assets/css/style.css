@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #1a1a1a;
@@ -30,8 +30,11 @@ a {
 
 /* HEADER */
 #site-header {
-  background-color: #ffffff;
+  background-color: #fafafa;
   padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-inner {
@@ -74,6 +77,16 @@ a {
 }
 
 /* --- HERO --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero {
   background-color: #1f7a4d;
   padding: 110px 24px;
@@ -96,12 +109,16 @@ a {
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
+  animation: fadeInUp 0.6s ease-in both;
+  animation-delay: 0s;
 }
 
 .hero p {
   color: #ffffff;
   font-size: 1rem;
   margin: 0;
+  animation: fadeInUp 0.6s ease-in both;
+  animation-delay: 0.5s;
 }
 
 .btn-progetti {
@@ -111,6 +128,12 @@ a {
   justify-content: center;
   border: 2px solid #ffffff;
   color: #1f7a4d;
+  /* "backwards" (non "both"): durante il delay il bottone è invisibile (keyframe 0%),
+     ma al termine dell'animazione non trattiene nessun valore — il transform torna
+     libero e l'hover translateY(-3px) può funzionare. Con "both" o "forwards"
+     l'animazione congela transform: translateY(0) e sovrascrive l'hover. */
+  animation: fadeInUp 0.6s ease-in backwards;
+  animation-delay: 1s;
   padding: 9px 22px;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -119,11 +142,83 @@ a {
   transition:
     background-color 0.2s,
     color 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .btn-progetti:hover {
-  background-color: #ffffff;
-  color: #1f7a4d;
+  background-color: transparent;
+  color: #ffffff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-3px);
+}
+
+/* --- SERVICES --- */
+.services {
+  background-color: #fafafa;
+  padding: 60px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.services-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.services-inner h2 {
+  color: #1f7a4d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+  color: #1f7a4d;
+  font-size: 1.75rem;
+}
+
+.service-card h3 {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.service-card p {
+  color: #555555;
+  font-size: 0.95rem;
+  margin: 0;
 }
