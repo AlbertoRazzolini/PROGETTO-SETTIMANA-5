@@ -274,6 +274,84 @@ a {
   margin: 0;
 }
 
+/* --- WORKS --- */
+/* Sezione lavori: sfondo bianco, contenuto centrato */
+.works {
+  background-color: #ffffff;
+  padding: 60px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Titolo + griglia in colonna */
+.works-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Titolo di sezione in verde */
+.works-inner h2 {
+  color: #1f7a4d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+/* Card impilate in colonna su mobile */
+.works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Singola card: immagine + info sotto */
+.work-card {
+  background-color: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover card: si alza con ombra più marcata */
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Immagine occupa tutta la larghezza della card */
+.work-card img {
+  width: 100%;
+  display: block;
+}
+
+/* Titolo e categoria sotto l'immagine */
+.work-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+}
+
+.work-info h3 {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Tag categoria in verde */
+.work-info span {
+  color: #1f7a4d;
+  font-size: 0.85rem;
+}
+
 /* --- FOOTER --- */
 /* Footer scuro, contenuto centrato */
 #site-footer {
@@ -361,6 +439,21 @@ a {
     flex: 1 0 48%; /* cresce, non si restringe, larghezza base 48% */
   }
 
+  /* Lavori: griglia 2x2 */
+  .works-inner {
+    max-width: 90%;
+  }
+
+  .works-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .work-card {
+    flex: 0 0 48%;
+  }
+
   /* Footer: logo+tagline a sinistra, social al centro, copyright a destra */
   .footer-inner {
     flex-direction: row;
@@ -387,15 +480,20 @@ a {
   }
 
   /* Tre card affiancate in fila */
-  .services-inner {
-    max-width: 90%;
-  }
-
   .services-grid {
     flex-wrap: nowrap;
   }
 
   .service-card {
     flex: 1 1 0; /* cresce, si restringe, basis 0: le tre card si dividono lo spazio equamente */
+  }
+
+  /* Quattro card lavori in fila */
+  .works-grid {
+    flex-wrap: nowrap;
+  }
+
+  .work-card {
+    flex: 1 1 0;
   }
 }

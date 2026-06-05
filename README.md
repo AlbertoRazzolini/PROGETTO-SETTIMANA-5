@@ -12,7 +12,7 @@ Landing page per uno studio creativo fittizio, realizzata come progetto settiman
 
 - HTML5 semantico
 - CSS3 mobile-first (nessun framework)
-- JavaScript vanilla (scroll handler)
+- JavaScript vanilla (scroll handler, generazione dinamica card lavori)
 - Font: [Roboto](https://fonts.google.com/specimen/Roboto) via Google Fonts
 - Icone: [Font Awesome 6](https://fontawesome.com/)
 
@@ -30,12 +30,13 @@ PROGETTO-SETTIMANA-5/
 
 ## Sezioni
 
-| Sezione | Descrizione                                                                                                                                   |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll                                                                                         |
-| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp`                                                                                       |
-| Servizi | Tre card responsive (1 col → 2 col → 3 col)                                                                                                   |
-| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, social al centro, copyright a dx — click sul logo riporta in cima con scroll animato |
+| Sezione | Descrizione                                                                                                                                                                                  |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll                                                                                                                                        |
+| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp` — altezza minima 70vh                                                                                                                |
+| Servizi | Tre card responsive (1 col → 2 col → 3 col)                                                                                                                                                  |
+| Lavori  | Card generate da JS tramite `<template>` + `cloneNode` — per aggiungere un progetto basta un oggetto nell'array `progetti` in `script.js` (mobile-first 1 col → 768px 2x2 → 992px 4 in fila) |
+| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, social al centro, copyright a dx — click sul logo riporta in cima con scroll animato                                                 |
 
 ## Layout
 
@@ -43,8 +44,8 @@ Tutto in **flexbox**, niente grid né margin per la spaziatura (solo `gap`).
 
 Breakpoint:
 
-- `768px` — header in riga, card 2+1, footer in riga a tre blocchi
-- `992px` — card tre in fila, header `space-around`
+- `768px` — header in riga, card servizi 2+1, card lavori 2x2, footer in riga a tre blocchi
+- `992px` — card servizi tre in fila, card lavori quattro in fila, header `space-around`
 
 ## Avvio
 
