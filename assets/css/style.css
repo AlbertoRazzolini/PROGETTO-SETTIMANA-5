@@ -234,6 +234,8 @@ a {
 }
 
 /* Singola card: bianca, bordi arrotondati, ombra leggera */
+/* "backwards": mantiene opacity:0 durante il delay, ma rilascia il transform
+   al termine — l'hover translateY(-6px) funziona liberamente */
 .service-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -244,10 +246,16 @@ a {
   gap: 12px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  animation: fadeInUp 0.5s ease-in backwards;
   transition:
     transform 0.2s,
     box-shadow 0.2s;
 }
+
+/* Entrata scaglionata: ogni card entra 0.15s dopo la precedente */
+.service-card:first-child  { animation-delay: 0s; }
+.service-card:nth-child(2) { animation-delay: 0.15s; }
+.service-card:last-child   { animation-delay: 0.3s; }
 
 /* Hover card: si alza con ombra più marcata */
 .service-card:hover {
@@ -352,6 +360,82 @@ a {
   font-size: 0.85rem;
 }
 
+/* --- TEAM --- */
+/* Sezione team: sfondo grigio chiaro, contenuto centrato */
+.team {
+  background-color: #fafafa;
+  padding: 60px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Titolo + griglia in colonna */
+.team-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Titolo di sezione in verde */
+.team-inner h2 {
+  color: #1f7a4d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+/* Card impilate in colonna su mobile */
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Singola card: avatar circolare, nome e ruolo centrati */
+.team-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar circolare */
+.team-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Ruolo in verde */
+.team-card span {
+  color: #1f7a4d;
+  font-size: 0.85rem;
+}
+
 /* --- FOOTER --- */
 /* Footer scuro, contenuto centrato */
 #site-footer {
@@ -452,6 +536,20 @@ a {
 
   .work-card {
     flex: 0 0 48%;
+  }
+
+  /* Team: tre card in fila da 768px */
+  .team-inner {
+    max-width: 90%;
+  }
+
+  .team-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .team-card {
+    flex: 1 1 0;
   }
 
   /* Footer: logo+tagline a sinistra, social al centro, copyright a destra */

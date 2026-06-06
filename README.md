@@ -30,13 +30,14 @@ PROGETTO-SETTIMANA-5/
 
 ## Sezioni
 
-| Sezione | Descrizione                                                                                                                                                                                  |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll                                                                                                                                        |
-| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp` — altezza minima 70vh                                                                                                                |
-| Servizi | Tre card responsive (1 col → 2 col → 3 col)                                                                                                                                                  |
+| Sezione | Descrizione                                                                                                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Header  | Logo + nav sticky, diventa scuro dopo 100px di scroll                                                                                                                                          |
+| Hero    | Titolo, sottotitolo e bottone con animazione `fadeInUp` — altezza minima 70vh                                                                                                                  |
+| Servizi | Tre card responsive (1 col → 2 col → 3 col) — entrata scaglionata con `fadeInUp` e `animation-delay` via `:first-child`, `:nth-child(2)`, `:last-child`                                       |
 | Lavori  | Card generate da JS tramite `<template>` + `cloneNode` — per aggiungere un progetto basta un oggetto nell'array `progetti` in `script.js` (mobile-first 1 col → 768px 2x2 → 992px 4 in fila) |
-| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, social al centro, copyright a dx — click sul logo riporta in cima con scroll animato                                                 |
+| Team    | 3 membri in HTML statico, avatar circolare — da 768px tre in fila                                                                                                                              |
+| Footer  | Mobile: colonna centrata — da 768px: logo+tagline a sx, social al centro, copyright a dx — click sul logo riporta in cima con scroll animato                                                   |
 
 ## Layout
 
@@ -44,7 +45,7 @@ Tutto in **flexbox**, niente grid né margin per la spaziatura (solo `gap`).
 
 Breakpoint:
 
-- `768px` — header in riga, card servizi 2+1, card lavori 2x2, footer in riga a tre blocchi
+- `768px` — header in riga, card servizi 2+1, card lavori 2x2, team tre in fila, footer in riga a tre blocchi
 - `992px` — card servizi tre in fila, card lavori quattro in fila, header `space-around`
 
 ## Avvio
